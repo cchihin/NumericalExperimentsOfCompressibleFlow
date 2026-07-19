@@ -1,0 +1,107 @@
+======================================================================
+Nel × P sweep  —  SSP-RK2, NonSmooth, t=3.0, CFL-adaptive dt
+CFL constant = 0.04  (dt = 0.04 * h / (2P+1))
+======================================================================
+
+Planned configurations:
+  Nel    P     DoF      dt_nom    nsteps (est)
+--------------------------------------------------
+   80    2     240    1.00e-03            3000
+   80    3     320    7.14e-04            4200
+   80    4     400    5.56e-04            5400
+  160    2     480    5.00e-04            6000
+  160    3     640    3.57e-04            8400
+  160    4     800    2.78e-04           10800
+  320    2     960    2.50e-04           12000
+  320    3    1280    1.79e-04           16800
+  320    4    1600    1.39e-04           21600
+  640    2    1920    1.25e-04           24000
+  640    3    2560    8.93e-05           33600
+  640    4    3200    6.94e-05           43200
+
+
+>>> Nel80_P2
+    Nel=80  P=2  dt_nom=1.00e-03  dt_adj=1.00e-03  nsteps=3000  io_chk=500
+    OK  wall=1s
+    FieldConvert failed: 
+[31mFatal   : [0mLevel 0 assertion violation
+new value is not a number
+
+
+
+>>> Nel80_P3
+    Nel=80  P=3  dt_nom=7.14e-04  dt_adj=7.14e-04  nsteps=4200  io_chk=700
+    FAILED  rc=1  completed=False  wall=2s
+    [36mWarning : [0mLevel 0 assertion violation The IO_CheckSteps parameter is now deprecated. Please use the 'Checkpoint' filter instead   [31mFatal   : [0mLevel 0 assertion violation NaN found during time integration.
+
+>>> Nel80_P4
+    Nel=80  P=4  dt_nom=5.56e-04  dt_adj=5.56e-04  nsteps=5400  io_chk=900
+    OK  wall=3s
+    L2(rho) = 2.9933e-02
+
+>>> Nel160_P2
+    Nel=160  P=2  dt_nom=5.00e-04  dt_adj=5.00e-04  nsteps=6000  io_chk=1000
+    OK  wall=5s
+    L2(rho) = 2.9248e-02
+
+>>> Nel160_P3
+    Nel=160  P=3  dt_nom=3.57e-04  dt_adj=3.57e-04  nsteps=8400  io_chk=1400
+    OK  wall=8s
+    L2(rho) = 2.9281e-02
+
+>>> Nel160_P4
+    Nel=160  P=4  dt_nom=2.78e-04  dt_adj=2.78e-04  nsteps=10800  io_chk=1800
+    OK  wall=13s
+    L2(rho) = 2.9439e-02
+
+>>> Nel320_P2
+    Nel=320  P=2  dt_nom=2.50e-04  dt_adj=2.50e-04  nsteps=12000  io_chk=2000
+    OK  wall=24s
+    L2(rho) = 2.9257e-02
+
+>>> Nel320_P3
+    Nel=320  P=3  dt_nom=1.79e-04  dt_adj=1.79e-04  nsteps=16800  io_chk=2800
+    OK  wall=38s
+    L2(rho) = 2.9258e-02
+
+>>> Nel320_P4
+    Nel=320  P=4  dt_nom=1.39e-04  dt_adj=1.39e-04  nsteps=21600  io_chk=3600
+    OK  wall=49s
+    L2(rho) = 2.9232e-02
+
+>>> Nel640_P2
+    Nel=640  P=2  dt_nom=1.25e-04  dt_adj=1.25e-04  nsteps=24000  io_chk=4000
+    OK  wall=95s
+    L2(rho) = 2.9259e-02
+
+>>> Nel640_P3
+    Nel=640  P=3  dt_nom=8.93e-05  dt_adj=8.93e-05  nsteps=33600  io_chk=5600
+    OK  wall=135s
+    L2(rho) = 2.9259e-02
+
+>>> Nel640_P4
+    Nel=640  P=4  dt_nom=6.94e-05  dt_adj=6.94e-05  nsteps=43200  io_chk=7200
+    OK  wall=184s
+    L2(rho) = 2.9259e-02
+
+======================================================================
+SUMMARY
+  Nel    P     DoF          dt    nsteps  Status               L2(rho)   wall(s)
+------------------------------------------------------------------------------------------
+   80    2     240    1.00e-03      3000  OK                   ---             1
+   80    3     320    7.14e-04      4200  crash                ---             2
+   80    4     400    5.56e-04      5400  OK                2.9933e-02         3
+  160    2     480    5.00e-04      6000  OK                2.9248e-02         5
+  160    3     640    3.57e-04      8400  OK                2.9281e-02         8
+  160    4     800    2.78e-04     10800  OK                2.9439e-02        13
+  320    2     960    2.50e-04     12000  OK                2.9257e-02        24
+  320    3    1280    1.79e-04     16800  OK                2.9258e-02        38
+  320    4    1600    1.39e-04     21600  OK                2.9232e-02        49
+  640    2    1920    1.25e-04     24000  OK                2.9259e-02        95
+  640    3    2560    8.93e-05     33600  OK                2.9259e-02       135
+  640    4    3200    6.94e-05     43200  OK                2.9259e-02       184
+
+=> Best: Nel=320  P=4  DoF=1600  dt=1.39e-04  L2(rho)=2.9232e-02
+
+Results → /home/chihin/NumericalExperimentsOfCompressibleFlow/LeblancShocktube-claude/Test/Benchmark2/results2.json
+DONE.

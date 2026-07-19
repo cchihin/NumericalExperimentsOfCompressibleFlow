@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<NEKTAR>
+    <EXPANSIONS>
+        <E COMPOSITE="C[0]" NUMMODES="3" FIELDS="rho,rhou,E" TYPE="MODIFIED" />
+    </EXPANSIONS>
+
+    <CONDITIONS>
+
+        <PARAMETERS>
+            <P> TimeStep       = 1e-6               </P>
+            <P> FinTime        = 1e-5               </P>
+            <P> NumSteps       = FinTime/TimeStep   </P>
+            <P> IO_CheckSteps  = 100                </P>
+            <P> IO_InfoSteps   = 10                 </P>
+
+            <!-- Constants -->
+            <P> Gamma          = 5.0/3.0                             </P>
+            <P> gamma          = 5.0/3.0                             </P>
+            <P> rhoL           = 1.0                                 </P>
+            <P> rhoR           = 1.0e-3                              </P>
+            <P> uL             = 0.0                                 </P>
+            <P> uR             = 0.0                                 </P>
+            <P> pL             = (Gamma - 1.0) * 0.1                 </P>
+            <P> pR             = (Gamma - 1.0) * 1e-10               </P>
+            <P> EL             = pL/(Gamma - 1.0) + 0.5*rhoL*(uL*uL) </P>
+            <P> ER             = pR/(Gamma - 1.0) + 0.5*rhoR*(uR*uR) </P>
+
+            <!-- Far-field (ambient) values -->
+            <P> pInf  = pL </P>
+            <P> rhoInf = rhoL </P>
+            <P> uInf  = uR </P>
+
+        </PARAMETERS>
+
+        <SOLVERINFO>
+            <I PROPERTY="EQTYPE"            VALUE="EulerCFE"      />
+            <I PROPERTY="Projection"        VALUE="DisContinuous" />
+            <I PROPERTY="AdvectionType"     VALUE="WeakDG"        />
+            <I PROPERTY="UpwindType"        VALUE="ExactToro"     />
+            <I PROPERTY="ProblemType"       VALUE="General"       />
+        </SOLVERINFO>
+
+        <TIMEINTEGRATIONSCHEME>
+            <METHOD> RungeKutta </METHOD>
+            <ORDER> 4 </ORDER>
+        </TIMEINTEGRATIONSCHEME>
+
+        <VARIABLES>
+            <V ID="0"> rho </V>
+            <V ID="1"> rhou </V>
+            <V ID="2"> E </V>
+        </VARIABLES>
+
+        <BOUNDARYREGIONS>
+            <B ID="0"> C[1] </B>
+            <B ID="1"> C[2] </B>
+        </BOUNDARYREGIONS>
+
+        <BOUNDARYCONDITIONS>
+            <REGION REF="0">
+                <D VAR="rho" VALUE="rhoL" />
+                <D VAR="rhou" VALUE="rhoL*uL" />
+                <D VAR="E" VALUE="EL" />
+            </REGION>
+            <REGION REF="1">
+                <D VAR="rho" VALUE="rhoR" />
+                <D VAR="rhou" VALUE="rhoR*uR" />
+                <D VAR="E" VALUE="ER" />
+            </REGION>
+        </BOUNDARYCONDITIONS>
+
+        <FUNCTION NAME="InitialConditions">
+            <E VAR="rho"    DOMAIN="0" VALUE="(x < 0.33) * rhoL + (x >= 0.33) * rhoR" />
+            <E VAR="rhou"   DOMAIN="0" VALUE="(x < 0.33) * rhoL*uL * (x >= 0.33) * rhoR*uR" />
+            <E VAR="E"      DOMAIN="0" VALUE="(x < 0.33) * EL + (x >= 0.33) * ER" />
+        </FUNCTION>
+
+    </CONDITIONS>
+
+</NEKTAR>
+

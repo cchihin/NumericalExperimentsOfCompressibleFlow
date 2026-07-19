@@ -1,0 +1,29 @@
+TimeIntegration Schemes:
+1. Backward difference
+2. Low Storage Explicit Runge Kutta
+
+
+Compressible flow benchmarking examples,
+1D
+1. Leblanc Shock Tube
+2. Sod Shock Tube
+3. Sue-oshoe problem
+
+2D
+1. 2D Riemann problem
+2. Darund Tenault Shock
+
+3D
+1. Supersonic TGV
+2. Subsonic TGV
+3. Backward facing step
+
+At supersonic do we have sustain VKI?
+
+Parameter tuning for JFNK method
+
+H3PC paper:
+1. GJP increases stiffness by minimising characteristic speed.
+2.
+
+

@@ -1,0 +1,200 @@
+[
+  {
+    "nel": 160,
+    "mu0": 1.0,
+    "upwind": "LaxFriedrichs",
+    "label": "Nel160_P2_mu1p0_LxF",
+    "dt": 0.0009000900090009,
+    "ok": true,
+    "reason": "ok",
+    "l2": 0.016050530283633836,
+    "wall": 10.42438006401062
+  },
+  {
+    "nel": 160,
+    "mu0": 1.0,
+    "upwind": "ExactToro",
+    "label": "Nel160_P2_mu1p0_ExT",
+    "dt": 0.0009000900090009,
+    "ok": true,
+    "reason": "ok",
+    "l2": 0.015958139778389918,
+    "wall": 13.121009349822998
+  },
+  {
+    "nel": 320,
+    "mu0": 1.0,
+    "upwind": "LaxFriedrichs",
+    "label": "Nel320_P2_mu1p0_LxF",
+    "dt": 0.00045004500450045,
+    "ok": true,
+    "reason": "ok",
+    "l2": 0.009753750430067742,
+    "wall": 40.612361669540405
+  },
+  {
+    "nel": 320,
+    "mu0": 1.0,
+    "upwind": "ExactToro",
+    "label": "Nel320_P2_mu1p0_ExT",
+    "dt": 0.00045004500450045,
+    "ok": true,
+    "reason": "ok",
+    "l2": 0.009738090776321193,
+    "wall": 45.785396575927734
+  },
+  {
+    "nel": 640,
+    "mu0": 1.0,
+    "upwind": "LaxFriedrichs",
+    "label": "Nel640_P2_mu1p0_LxF",
+    "dt": 0.000225022502250225,
+    "ok": true,
+    "reason": "ok",
+    "l2": 0.007677268519838551,
+    "wall": 207.8293423652649
+  },
+  {
+    "nel": 640,
+    "mu0": 1.0,
+    "upwind": "ExactToro",
+    "label": "Nel640_P2_mu1p0_ExT",
+    "dt": 0.000225022502250225,
+    "ok": true,
+    "reason": "ok",
+    "l2": 0.007788268344038907,
+    "wall": 192.9680678844452
+  },
+  {
+    "nel": 160,
+    "mu0": 0.5,
+    "upwind": "LaxFriedrichs",
+    "label": "Nel160_P2_mu0p5_LxF",
+    "dt": 0.0009000900090009,
+    "ok": true,
+    "reason": "ok",
+    "l2": 0.012888215175121231,
+    "wall": 12.75684142112732
+  },
+  {
+    "nel": 160,
+    "mu0": 0.5,
+    "upwind": "ExactToro",
+    "label": "Nel160_P2_mu0p5_ExT",
+    "dt": 0.0009000900090009,
+    "ok": false,
+    "reason": "crash",
+    "l2": null,
+    "wall": 3.03690767288208
+  },
+  {
+    "nel": 320,
+    "mu0": 0.5,
+    "upwind": "LaxFriedrichs",
+    "label": "Nel320_P2_mu0p5_LxF",
+    "dt": 0.00045004500450045,
+    "ok": true,
+    "reason": "ok",
+    "l2": 0.00906214291807,
+    "wall": 43.28654766082764
+  },
+  {
+    "nel": 320,
+    "mu0": 0.5,
+    "upwind": "ExactToro",
+    "label": "Nel320_P2_mu0p5_ExT",
+    "dt": 0.00045004500450045,
+    "ok": false,
+    "reason": "crash",
+    "l2": null,
+    "wall": 11.938156604766846
+  },
+  {
+    "nel": 640,
+    "mu0": 0.5,
+    "upwind": "LaxFriedrichs",
+    "label": "Nel640_P2_mu0p5_LxF",
+    "dt": 0.000225022502250225,
+    "ok": true,
+    "reason": "ok",
+    "l2": 0.0077319488192478395,
+    "wall": 176.4755163192749
+  },
+  {
+    "nel": 640,
+    "mu0": 0.5,
+    "upwind": "ExactToro",
+    "label": "Nel640_P2_mu0p5_ExT",
+    "dt": 0.000225022502250225,
+    "ok": true,
+    "reason": "ok",
+    "l2": 0.00771238577227888,
+    "wall": 205.24667310714722
+  },
+  {
+    "nel": 160,
+    "mu0": 0.2,
+    "upwind": "LaxFriedrichs",
+    "label": "Nel160_P2_mu0p2_LxF",
+    "dt": 0.0009000900090009,
+    "ok": false,
+    "reason": "crash",
+    "l2": null,
+    "wall": 0.6140079498291016
+  },
+  {
+    "nel": 160,
+    "mu0": 0.2,
+    "upwind": "ExactToro",
+    "label": "Nel160_P2_mu0p2_ExT",
+    "dt": 0.0009000900090009,
+    "ok": false,
+    "reason": "crash",
+    "l2": null,
+    "wall": 0.6266343593597412
+  },
+  {
+    "nel": 320,
+    "mu0": 0.2,
+    "upwind": "LaxFriedrichs",
+    "label": "Nel320_P2_mu0p2_LxF",
+    "dt": 0.00045004500450045,
+    "ok": false,
+    "reason": "crash",
+    "l2": null,
+    "wall": 2.3617053031921387
+  },
+  {
+    "nel": 320,
+    "mu0": 0.2,
+    "upwind": "ExactToro",
+    "label": "Nel320_P2_mu0p2_ExT",
+    "dt": 0.00045004500450045,
+    "ok": false,
+    "reason": "crash",
+    "l2": null,
+    "wall": 2.813478469848633
+  },
+  {
+    "nel": 640,
+    "mu0": 0.2,
+    "upwind": "LaxFriedrichs",
+    "label": "Nel640_P2_mu0p2_LxF",
+    "dt": 0.000225022502250225,
+    "ok": false,
+    "reason": "crash",
+    "l2": null,
+    "wall": 11.73460865020752
+  },
+  {
+    "nel": 640,
+    "mu0": 0.2,
+    "upwind": "ExactToro",
+    "label": "Nel640_P2_mu0p2_ExT",
+    "dt": 0.000225022502250225,
+    "ok": false,
+    "reason": "crash",
+    "l2": null,
+    "wall": 11.08509373664856
+  }
+]

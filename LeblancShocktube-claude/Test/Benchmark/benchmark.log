@@ -1,0 +1,173 @@
+=================================================================
+PHASE 1  —  time scheme × dt   (Nel=160, P=2, NonSmooth, t=3.0)
+=================================================================
+
+>>> P1_FwdEuler_dt1e-3
+    Nel=160  P=2  dt=1e-03  scheme=Euler1_Forward
+    OK  wall=1s  last_chk=P1_FwdEuler_dt1e-3_6.chk
+    L2(rho) = 2.9244e-02
+
+>>> P1_FwdEuler_dt1e-4
+    Nel=160  P=2  dt=1e-04  scheme=Euler1_Forward
+    OK  wall=14s  last_chk=P1_FwdEuler_dt1e-4_6.chk
+    L2(rho) = 2.9257e-02
+
+>>> P1_FwdEuler_dt1e-5
+    Nel=160  P=2  dt=1e-05  scheme=Euler1_Forward
+    OK  wall=144s  last_chk=P1_FwdEuler_dt1e-5_6.chk
+    L2(rho) = 2.9263e-02
+
+>>> P1_SSPK2_dt1e-3
+    Nel=160  P=2  dt=1e-03  scheme=RungeKutta2_SSP
+    OK  wall=3s  last_chk=P1_SSPK2_dt1e-3_6.chk
+    L2(rho) = 2.9275e-02
+
+>>> P1_SSPK2_dt1e-4
+    Nel=160  P=2  dt=1e-04  scheme=RungeKutta2_SSP
+    OK  wall=27s  last_chk=P1_SSPK2_dt1e-4_6.chk
+    L2(rho) = 2.9249e-02
+
+>>> P1_SSPK2_dt1e-5
+    Nel=160  P=2  dt=1e-05  scheme=RungeKutta2_SSP
+    OK  wall=279s  last_chk=P1_SSPK2_dt1e-5_6.chk
+    L2(rho) = 2.9263e-02
+
+>>> P1_SSPK3_dt1e-3
+    Nel=160  P=2  dt=1e-03  scheme=RungeKutta3_SSP
+    OK  wall=4s  last_chk=P1_SSPK3_dt1e-3_6.chk
+    L2(rho) = 2.9266e-02
+
+>>> P1_SSPK3_dt1e-4
+    Nel=160  P=2  dt=1e-04  scheme=RungeKutta3_SSP
+    OK  wall=42s  last_chk=P1_SSPK3_dt1e-4_6.chk
+    L2(rho) = 2.9248e-02
+
+>>> P1_SSPK3_dt1e-5
+    Nel=160  P=2  dt=1e-05  scheme=RungeKutta3_SSP
+    OK  wall=418s  last_chk=P1_SSPK3_dt1e-5_6.chk
+    L2(rho) = 2.9261e-02
+
+>>> P1_RK4_dt1e-3
+    Nel=160  P=2  dt=1e-03  scheme=RungeKutta4
+    OK  wall=7s  last_chk=P1_RK4_dt1e-3_6.chk
+    L2(rho) = 2.9264e-02
+
+>>> P1_RK4_dt1e-4
+    Nel=160  P=2  dt=1e-04  scheme=RungeKutta4
+    OK  wall=63s  last_chk=P1_RK4_dt1e-4_6.chk
+    L2(rho) = 2.9248e-02
+
+>>> P1_RK4_dt1e-5
+    Nel=160  P=2  dt=1e-05  scheme=RungeKutta4
+    OK  wall=560s  last_chk=P1_RK4_dt1e-5_6.chk
+    L2(rho) = 2.9261e-02
+
+-----------------------------------------------------------------
+PHASE 1 SUMMARY
+Scheme              dt  Status             L2(rho)   wall(s)
+-----------------------------------------------------------------
+FwdEuler         1e-03  OK              2.9244e-02         1
+FwdEuler         1e-04  OK              2.9257e-02        14
+FwdEuler         1e-05  OK              2.9263e-02       144
+SSPK2            1e-03  OK              2.9275e-02         3
+SSPK2            1e-04  OK              2.9249e-02        27
+SSPK2            1e-05  OK              2.9263e-02       279
+SSPK3            1e-03  OK              2.9266e-02         4
+SSPK3            1e-04  OK              2.9248e-02        42
+SSPK3            1e-05  OK              2.9261e-02       418
+RK4              1e-03  OK              2.9264e-02         7
+RK4              1e-04  OK              2.9248e-02        63
+RK4              1e-05  OK              2.9261e-02       560
+
+=> Phase 2 uses: scheme=SSPK2  dt=1e-03
+
+=================================================================
+PHASE 2  —  Nel × P sweep   (SSPK2, dt=1e-03, NonSmooth, t=3.0)
+=================================================================
+
+>>> P2_SSPK2_Nel80_P1
+    Nel=80  P=1  dt=1e-03  scheme=RungeKutta2_SSP
+    FAILED  rc=1  completed=False  wall=1s
+    [36mWarning : [0mLevel 0 assertion violation The IO_CheckSteps parameter is now deprecated. Please use the 'Checkpoint' filter instead   [31mFatal   : [0mLevel 0 assertion violation NaN found during time integration.
+
+>>> P2_SSPK2_Nel80_P2
+    Nel=80  P=2  dt=1e-03  scheme=RungeKutta2_SSP
+    OK  wall=2s  last_chk=P2_SSPK2_Nel80_P2_6.chk
+    FieldConvert failed: 
+[31mFatal   : [0mLevel 0 assertion violation
+new value is not a number
+
+
+
+>>> P2_SSPK2_Nel80_P3
+    Nel=80  P=3  dt=1e-03  scheme=RungeKutta2_SSP
+    FAILED  rc=1  completed=False  wall=2s
+    [36mWarning : [0mLevel 0 assertion violation The IO_CheckSteps parameter is now deprecated. Please use the 'Checkpoint' filter instead   [31mFatal   : [0mLevel 0 assertion violation NaN found during time integration.
+
+>>> P2_SSPK2_Nel80_P4
+    Nel=80  P=4  dt=1e-03  scheme=RungeKutta2_SSP
+    FAILED  rc=1  completed=False  wall=1s
+    [36mWarning : [0mLevel 0 assertion violation The IO_CheckSteps parameter is now deprecated. Please use the 'Checkpoint' filter instead   [31mFatal   : [0mLevel 0 assertion violation NaN found during time integration.
+
+>>> P2_SSPK2_Nel160_P1
+    Nel=160  P=1  dt=1e-03  scheme=RungeKutta2_SSP
+    FAILED  rc=1  completed=False  wall=2s
+    [36mWarning : [0mLevel 0 assertion violation The IO_CheckSteps parameter is now deprecated. Please use the 'Checkpoint' filter instead   [31mFatal   : [0mLevel 0 assertion violation NaN found during time integration.
+
+>>> P2_SSPK2_Nel160_P2
+    Nel=160  P=2  dt=1e-03  scheme=RungeKutta2_SSP
+    OK  wall=3s  last_chk=P2_SSPK2_Nel160_P2_6.chk
+    L2(rho) = 2.9275e-02
+
+>>> P2_SSPK2_Nel160_P3
+    Nel=160  P=3  dt=1e-03  scheme=RungeKutta2_SSP
+    FAILED  rc=1  completed=False  wall=2s
+    [36mWarning : [0mLevel 0 assertion violation The IO_CheckSteps parameter is now deprecated. Please use the 'Checkpoint' filter instead   [31mFatal   : [0mLevel 0 assertion violation NaN found during time integration.
+
+>>> P2_SSPK2_Nel160_P4
+    Nel=160  P=4  dt=1e-03  scheme=RungeKutta2_SSP
+    FAILED  rc=1  completed=False  wall=2s
+    [36mWarning : [0mLevel 0 assertion violation The IO_CheckSteps parameter is now deprecated. Please use the 'Checkpoint' filter instead   [31mFatal   : [0mLevel 0 assertion violation NaN found during time integration.
+
+>>> P2_SSPK2_Nel320_P1
+    Nel=320  P=1  dt=1e-03  scheme=RungeKutta2_SSP
+    FAILED  rc=1  completed=False  wall=5s
+    [36mWarning : [0mLevel 0 assertion violation The IO_CheckSteps parameter is now deprecated. Please use the 'Checkpoint' filter instead   [31mFatal   : [0mLevel 0 assertion violation NaN found during time integration.
+
+>>> P2_SSPK2_Nel320_P2
+    Nel=320  P=2  dt=1e-03  scheme=RungeKutta2_SSP
+    FAILED  rc=1  completed=False  wall=4s
+    [36mWarning : [0mLevel 0 assertion violation The IO_CheckSteps parameter is now deprecated. Please use the 'Checkpoint' filter instead   [31mFatal   : [0mLevel 0 assertion violation NaN found during time integration.
+
+>>> P2_SSPK2_Nel320_P3
+    Nel=320  P=3  dt=1e-03  scheme=RungeKutta2_SSP
+    FAILED  rc=1  completed=False  wall=4s
+    [36mWarning : [0mLevel 0 assertion violation The IO_CheckSteps parameter is now deprecated. Please use the 'Checkpoint' filter instead   [31mFatal   : [0mLevel 0 assertion violation NaN found during time integration.
+
+>>> P2_SSPK2_Nel320_P4
+    Nel=320  P=4  dt=1e-03  scheme=RungeKutta2_SSP
+    FAILED  rc=1  completed=False  wall=0s
+    [36mWarning : [0mLevel 0 assertion violation The IO_CheckSteps parameter is now deprecated. Please use the 'Checkpoint' filter instead   [31mFatal   : [0mLevel 0 assertion violation NaN found during time integration.
+
+-----------------------------------------------------------------
+PHASE 2 SUMMARY
+  Nel    P    DoF  Status             L2(rho)   wall(s)
+-----------------------------------------------------------------
+   80    1    160  crash              ---             1
+   80    2    240  OK                 ---             2
+   80    3    320  crash              ---             2
+   80    4    400  crash              ---             1
+  160    1    320  crash              ---             2
+  160    2    480  OK              2.9275e-02         3
+  160    3    640  crash              ---             2
+  160    4    800  crash              ---             2
+  320    1    640  crash              ---             5
+  320    2    960  crash              ---             4
+  320    3   1280  crash              ---             4
+  320    4   1600  crash              ---             0
+
+=> Best config: Nel=160  P=2  DoF=480  L2(rho)=2.9275e-02
+
+Results → /home/chihin/NumericalExperimentsOfCompressibleFlow/LeblancShocktube-claude/Test/Benchmark/results.json
+Log     → /home/chihin/NumericalExperimentsOfCompressibleFlow/LeblancShocktube-claude/Test/Benchmark/benchmark.log
+DONE.

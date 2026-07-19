@@ -1,0 +1,46 @@
+=======================================================================
+	        EquationType: EulerCFE
+	        Session Name: P2_SSPK2_Nel320_P1
+	        Spatial Dim.: 1
+	  Max SEM Exp. Order: 2
+	      Expansion Dim.: 1
+	      Riemann Solver: LaxFriedrichs
+	      Advection Type: Weak DG
+	     Projection Type: Discontinuous Galerkin
+	 Advect. advancement: explicit
+	Diffuse. advancement: explicit
+	           Time Step: 0.001
+	        No. of Steps: 3000
+	 Checkpoints (steps): 500
+	    Integration Type: RungeKutta
+=======================================================================
+Initial Conditions:
+  - Field rho: rhoL + 0.5*(1+tanh((x-3)/0.5)) * (rhoR-rhoL)
+  - Field rhou: 0
+  - Field E: EL + 0.5*(1+tanh((x-3)/0.5)) * (ER-EL)
+Writing: "P2_SSPK2_Nel320_P1_0.chk" (0s, XML)
+Steps: 500      Time: 0.5          CPU Time: 0.837642s
+CFL: 0.00578773 (in elmt 123)
+Writing: "P2_SSPK2_Nel320_P1_1.chk" (0s, XML)
+Steps: 1000     Time: 1            CPU Time: 0.839871s
+CFL: 0.0072803 (in elmt 130)
+Writing: "P2_SSPK2_Nel320_P1_2.chk" (0s, XML)
+Steps: 1500     Time: 1.5          CPU Time: 0.839944s
+CFL: 0.00867615 (in elmt 138)
+Writing: "P2_SSPK2_Nel320_P1_3.chk" (0s, XML)
+Steps: 2000     Time: 2            CPU Time: 0.838946s
+CFL: 0.00995485 (in elmt 147)
+Writing: "P2_SSPK2_Nel320_P1_4.chk" (0s, XML)
+Steps: 2500     Time: 2.5          CPU Time: 0.842446s
+CFL: 0.0110872 (in elmt 159)
+Writing: "P2_SSPK2_Nel320_P1_5.chk" (0s, XML)
+
+
+[36mWarning : [0mLevel 0 assertion violation
+The IO_CheckSteps parameter is now deprecated.
+Please use the 'Checkpoint' filter instead
+
+
+[31mFatal   : [0mLevel 0 assertion violation
+NaN found during time integration.
+

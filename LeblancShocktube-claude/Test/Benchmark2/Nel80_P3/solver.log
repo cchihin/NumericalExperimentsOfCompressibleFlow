@@ -1,0 +1,46 @@
+=======================================================================
+	        EquationType: EulerCFE
+	        Session Name: Nel80_P3
+	        Spatial Dim.: 1
+	  Max SEM Exp. Order: 4
+	      Expansion Dim.: 1
+	      Riemann Solver: LaxFriedrichs
+	      Advection Type: Weak DG
+	     Projection Type: Discontinuous Galerkin
+	 Advect. advancement: explicit
+	Diffuse. advancement: explicit
+	           Time Step: 0.000714286
+	        No. of Steps: 4200
+	 Checkpoints (steps): 700
+	    Integration Type: RungeKutta
+=======================================================================
+Initial Conditions:
+  - Field rho: rhoL + 0.5*(1+tanh((x-3)/0.5)) * (rhoR-rhoL)
+  - Field rhou: 0
+  - Field E: EL + 0.5*(1+tanh((x-3)/0.5)) * (ER-EL)
+Writing: "Nel80_P3_0.chk" (0s, XML)
+Steps: 700      Time: 0.5          CPU Time: 0.349726s
+CFL: 0.00936426 (in elmt 30)
+Writing: "Nel80_P3_1.chk" (0s, XML)
+Steps: 1400     Time: 1            CPU Time: 0.355526s
+CFL: 0.0116912 (in elmt 32)
+Writing: "Nel80_P3_2.chk" (0s, XML)
+Steps: 2100     Time: 1.5          CPU Time: 0.359596s
+CFL: 0.0138312 (in elmt 35)
+Writing: "Nel80_P3_3.chk" (0s, XML)
+Steps: 2800     Time: 2            CPU Time: 0.364801s
+CFL: 0.015721 (in elmt 37)
+Writing: "Nel80_P3_4.chk" (0s, XML)
+Steps: 3500     Time: 2.5          CPU Time: 0.358638s
+CFL: 0.0171635 (in elmt 40)
+Writing: "Nel80_P3_5.chk" (0s, XML)
+
+
+[36mWarning : [0mLevel 0 assertion violation
+The IO_CheckSteps parameter is now deprecated.
+Please use the 'Checkpoint' filter instead
+
+
+[31mFatal   : [0mLevel 0 assertion violation
+NaN found during time integration.
+

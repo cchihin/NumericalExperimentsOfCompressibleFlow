@@ -1,0 +1,31 @@
+=======================================================================
+	        EquationType: EulerCFE
+	        Session Name: Nel640_P2_mu0p2_LxF
+	        Spatial Dim.: 1
+	  Max SEM Exp. Order: 3
+	      Expansion Dim.: 1
+	      Riemann Solver: LaxFriedrichs
+	      Advection Type: Weak DG
+	     Projection Type: Discontinuous Galerkin
+	 Advect. advancement: explicit
+	Diffuse. advancement: explicit
+	           Time Step: 0.000225023
+	        No. of Steps: 44440
+	 Checkpoints (steps): 4444
+	    Integration Type: RungeKutta
+=======================================================================
+Initial Conditions:
+  - Field rho: rhoL + 0.5*(1+tanh((x-3)/0.05)) * (rhoR-rhoL)
+  - Field rhou: 0
+  - Field E: EL + 0.5*(1+tanh((x-3)/0.05)) * (ER-EL)
+Writing: "Nel640_P2_mu0p2_LxF_0.chk" (0s, XML)
+
+
+[36mWarning : [0mLevel 0 assertion violation
+The IO_CheckSteps parameter is now deprecated.
+Please use the 'Checkpoint' filter instead
+
+
+[31mFatal   : [0mLevel 0 assertion violation
+NaN found during time integration.
+

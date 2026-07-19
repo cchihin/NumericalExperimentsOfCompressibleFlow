@@ -1,0 +1,54 @@
+=======================================================================
+	        EquationType: EulerCFE
+	        Session Name: A_Nel160_P3_mu1p0_skm1p3_cflp02
+	        Spatial Dim.: 1
+	  Max SEM Exp. Order: 4
+	      Expansion Dim.: 1
+	      Riemann Solver: LaxFriedrichs
+	      Advection Type: Weak DG
+	     Projection Type: Discontinuous Galerkin
+	 Advect. advancement: explicit
+	Diffuse. advancement: explicit
+	           Time Step: 0.000178571
+	        No. of Steps: 33600
+	 Checkpoints (steps): 16800
+	    Integration Type: RungeKutta
+=======================================================================
+Initial Conditions:
+  - Field rho: rhoL + 0.5*(1+tanh((x-3)/0.5)) * (rhoR-rhoL)
+  - Field rhou: 0
+  - Field E: EL + 0.5*(1+tanh((x-3)/0.5)) * (ER-EL)
+Writing: "A_Nel160_P3_mu1p0_skm1p3_cflp02_0.chk" (0s, XML)
+Steps: 1680     Time: 0.3          CPU Time: 1.91164s
+CFL: 0.00416008 (in elmt 59)
+Steps: 3360     Time: 0.6          CPU Time: 1.85041s
+CFL: 0.00491436 (in elmt 61)
+Steps: 5040     Time: 0.9          CPU Time: 1.79387s
+CFL: 0.00565663 (in elmt 63)
+Steps: 6720     Time: 1.2          CPU Time: 2.15287s
+CFL: 0.00638003 (in elmt 65)
+Steps: 8400     Time: 1.5          CPU Time: 2.09544s
+CFL: 0.00707849 (in elmt 68)
+Steps: 10080    Time: 1.8          CPU Time: 2.09147s
+CFL: 0.00774719 (in elmt 71)
+Steps: 11760    Time: 2.1          CPU Time: 1.83318s
+CFL: 0.00837101 (in elmt 74)
+Steps: 13440    Time: 2.4          CPU Time: 1.74911s
+CFL: 0.00894076 (in elmt 77)
+Steps: 15120    Time: 2.7          CPU Time: 2.25248s
+CFL: 0.00943342 (in elmt 81)
+Steps: 16800    Time: 3            CPU Time: 1.8088s 
+CFL: 0.00982196 (in elmt 84)
+Writing: "A_Nel160_P3_mu1p0_skm1p3_cflp02_1.chk" (0s, XML)
+Steps: 18480    Time: 3.3          CPU Time: 2.36884s
+CFL: 0.0101041 (in elmt 87)
+
+
+[36mWarning : [0mLevel 0 assertion violation
+The IO_CheckSteps parameter is now deprecated.
+Please use the 'Checkpoint' filter instead
+
+
+[31mFatal   : [0mLevel 0 assertion violation
+NaN found during time integration.
+
