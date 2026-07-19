@@ -4,4 +4,10 @@
 *csv
 *__pycache__*
 *pyc
+*.nav
+*.toc
+*.gz
+*.synctex.gz
+*.fdb_latexmk
+*.fls
 
