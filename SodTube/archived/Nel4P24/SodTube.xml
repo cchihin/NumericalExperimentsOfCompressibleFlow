@@ -1,0 +1,25 @@
+<NEKTAR>
+	<GEOMETRY DIM="1" SPACE="1">
+		<VERTEX>
+			<V ID="0">-1.0000 0.0000 0.0000</V>
+			<V ID="1">-0.5000 0.0000 0.0000</V>
+			<V ID="2">0.0000 0.0000 0.0000</V>
+			<V ID="3">0.5000 0.0000 0.0000</V>
+			<V ID="4">1.0000 0.0000 0.0000</V>
+		</VERTEX>
+		<ELEMENT>
+			<S ID="0">       0        1</S>
+			<S ID="1">       1        2</S>
+			<S ID="2">       2        3</S>
+			<S ID="3">       3        4</S>
+		</ELEMENT>
+		<COMPOSITE>
+			<C ID="0">S[0-3]</C>
+			<C ID="1">V[0]</C>
+			<C ID="2">V[4]</C>
+		</COMPOSITE>
+		<DOMAIN>
+			<D ID="0">C[0]</D>
+		</DOMAIN>
+	</GEOMETRY>
+</NEKTAR>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<NEKTAR>
+    <EXPANSIONS>
+        <E COMPOSITE="C[0]" NUMMODES="2" FIELDS="rho,rhou,E" TYPE="GLL_LAGRANGE_SEM" />
+    </EXPANSIONS>
+
+    <CONDITIONS>
+
+        <PARAMETERS>
+            <P> TimeStep       = 1e-5               </P>
+            <P> FinTime        = 0.4                </P>
+            <P> NumSteps       = FinTime/TimeStep   </P>
+            <P> IO_CheckSteps  = 0.1/TimeStep                </P>
+            <P> IO_InfoSteps   = 0.1/TimeStep                </P>
+            <P> IO_CFLSteps    = 0.1/TimeStep                </P>
+
+            <!-- Constants -->
+            <P> Gamma          = 1.4                                 </P>
+            <P> rhoL           = 1.0                                 </P>
+            <P> rhoR           = 0.125                               </P>
+            <P> uL             = 0.0                                 </P>
+            <P> uR             = 0.0                                 </P>
+            <P> pL             = 1                                   </P>
+            <P> pR             = 0.1                                 </P>
+            <P> EL             = pL/(Gamma - 1.0) + 0.5*rhoL*(uL*uL) </P>
+            <P> ER             = pR/(Gamma - 1.0) + 0.5*rhoR*(uR*uR) </P>
+
+            <!-- Far-field (ambient) values -->
+            <!--P> pInf  = pL </P>
+            <P> rhoInf = rhoL </P>
+            <P> uInf  = uR </P-->
+
+            <P> Skappa              = -1.3                     </P> 
+            <P> Kappa               = 0.2                      </P> 
+            <P> mu0                 = 0.1                      </P> 
+
+        </PARAMETERS>
+
+        <SOLVERINFO>
+            <I PROPERTY="EQTYPE"            VALUE="EulerCFE"      />
+            <I PROPERTY="Projection"        VALUE="DisContinuous" />
+            <I PROPERTY="AdvectionType"     VALUE="WeakDG"        />
+            <I PROPERTY="UpwindType"        VALUE="Roe"     />
+            <I PROPERTY="ProblemType"       VALUE="General"       />
+            <I PROPERTY="ShockCaptureType"  VALUE="NonSmooth"           />
+        </SOLVERINFO>
+
+        <TIMEINTEGRATIONSCHEME>
+            <METHOD> Euler </METHOD>
+            <ORDER> 1 </ORDER>
+            <VARIANT> Forward </VARIANT>
+        </TIMEINTEGRATIONSCHEME>
+
+        <!--TIMEINTEGRATIONSCHEME>
+            <METHOD> RungeKutta </METHOD>
+            <ORDER> 4 </ORDER>
+        </TIMEINTEGRATIONSCHEME-->
+
+        <VARIABLES>
+            <V ID="0"> rho </V>
+            <V ID="1"> rhou </V>
+            <V ID="2"> E </V>
+        </VARIABLES>
+
+        <BOUNDARYREGIONS>
+            <B ID="0"> C[1] </B>
+            <B ID="1"> C[2] </B>
+        </BOUNDARYREGIONS>
+
+        <BOUNDARYCONDITIONS>
+            <REGION REF="0">
+                <D VAR="rho" VALUE="rhoL" />
+                <D VAR="rhou" VALUE="rhoL*uL" />
+                <D VAR="E" VALUE="EL" />
+            </REGION>
+            <REGION REF="1">
+                <D VAR="rho" VALUE="rhoR" />
+                <D VAR="rhou" VALUE="rhoR*uR" />
+                <D VAR="E" VALUE="ER" />
+            </REGION>
+        </BOUNDARYCONDITIONS>
+
+        <FUNCTION NAME="InitialConditions">
+            <E VAR="rho"    DOMAIN="0" VALUE="rhoL + 0.5*(1+tanh(x/0.001)) * (rhoR-rhoL)" />
+            <E VAR="rhou"   DOMAIN="0" VALUE="0" />
+            <E VAR="E"      DOMAIN="0" VALUE="EL + 0.5*(1+tanh(x/0.001)) * (ER-EL)" />
+        </FUNCTION>
+    </CONDITIONS>
+</NEKTAR>
+
